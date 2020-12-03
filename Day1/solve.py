@@ -1,6 +1,7 @@
 import itertools
 import sys
 
+
 def part1(input_file):
   input_file.seek(0)
   inputs = itertools.combinations((int(s[:-1]) for s in input_file), 2)
