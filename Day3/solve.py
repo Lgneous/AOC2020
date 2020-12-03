@@ -25,7 +25,7 @@ def part2(input_file):
 
 
 if __name__ == "__main__":
-  if len(sys.argv) == 2:
-    with open(sys.argv[1]) as f:
-      print(part1(f))
-      print(part2(f))
+    if len(sys.argv) == 2:
+        with open(sys.argv[1]) as f:
+            print(part1(f))
+            print(part2(f))
