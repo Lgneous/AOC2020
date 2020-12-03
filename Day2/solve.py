@@ -2,6 +2,7 @@ import sys
 
 
 def part1(input_file):
+  input_file.seek(0)
   res = 0
   for line in input_file:
     n, (c, _), password = line[:-1].split(' ')
@@ -11,6 +12,7 @@ def part1(input_file):
 
 
 def part2(input_file):
+  input_file.seek(0)
   res = 0
   for line in input_file:
     n, (c, _), password = line[:-1].split(' ')
