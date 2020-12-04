@@ -1,3 +1,6 @@
+import sys
+
+
 valid = {
     "byr": lambda x: len(x) == 4 and int(x) in range(1920, 2003),
     "iyr": lambda x: len(x) == 4 and int(x) in range(2010, 2021),
