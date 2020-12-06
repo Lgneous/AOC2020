@@ -16,8 +16,8 @@ def part2(input_file):
     return sum(
         v == n_users
         for input in inputs
-        for v in Counter(list(input.replace("\n", ""))).values()
         if (n_users := len(input.split()))
+        for v in Counter(list(input.replace("\n", ""))).values()
     )
 
 
