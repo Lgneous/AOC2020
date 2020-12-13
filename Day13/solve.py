@@ -41,9 +41,9 @@ def part2(input_file):
   input_file.seek(0)
   _, buses = input_file.read().split()
   buses = [(i, int(x)) for i, x in enumerate(buses.split(',')) if x != 'x']
-  residues = [x for _, x in buses]
-  modulii = [x - i for i, x in buses]
-  return chinese_remainder(residues, modulii)
+  moduli = [x for _, x in buses]
+  residues = [x - i for i, x in buses]
+  return chinese_remainder(moduli, residues)
 
 
 if __name__ == "__main__":
