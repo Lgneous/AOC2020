@@ -6,21 +6,11 @@ import sys
 
 def masked(i, mask):
   i = i | int(mask.replace("X", "0"), 2)
+  i = i & int(mask.replace("0", "1").replace("X", "0"), 2)
   n_x = mask.count("X")
   prod = itertools.product("01", repeat=n_x)
-  ret = []
-  i_as_string = "{:036b}".format(i)
-  for p in prod:
-    p = iter(p)
-    mask_lst = list(mask.replace("1", "0"))
-    for i in range(len(mask_lst)):
-      if mask_lst[i] == "X":
-        mask_lst[i] = next(p)
-      else:
-        mask_lst[i] = i_as_string[i]
+  return [i | int(mask.replace("X", "{}").format(*p), 2) for p in prod]
 
-    ret.append(int("".join(mask_lst), 2))
-  return ret
 
 def part1(f):
   f.seek(0)
@@ -37,6 +27,7 @@ def part1(f):
     val = int(val)
     mem[i] = (val & mask_one) | mask_two
   return sum(mem)
+
 
 def part2(f):
   f.seek(0)
