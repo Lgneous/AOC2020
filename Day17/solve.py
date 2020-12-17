@@ -28,10 +28,8 @@ def get_input(f):
   
 def part1(f):
   arr = get_input(f)
-  kernel = np.ones((3,3,3,3))
-  kernel[1,1,1,1] = 0
-  kernel[0] = 0
-  kernel[2] = 0
+  kernel = np.ones((1,3,3,3))
+  kernel[0,1,1,1] = 0
   return game_of_life_4d(get_input(f), kernel, 6)
 
 
